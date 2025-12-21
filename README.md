@@ -5,5 +5,5 @@ Group Members
 
 Christoff Cowan
 Javari Whilby 
-Kai Braithwaite
+Kye Brathwaite
 Jaden Jones
