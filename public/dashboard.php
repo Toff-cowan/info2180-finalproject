@@ -45,7 +45,8 @@ require_once __DIR__ . '/../includes/session.php';
     </table>
 
     <br>
-    <button>Add New Contact</button>
+    <a href="add-contact.php">Add New Contact</a>
+
 </main>
 
 <script src="../assets/js/contacts.js"></script>
