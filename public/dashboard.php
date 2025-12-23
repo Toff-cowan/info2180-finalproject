@@ -5,7 +5,9 @@ require_once __DIR__ . '/../includes/session.php';
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dolphin CRM | Dashboard</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
 
@@ -28,7 +30,7 @@ require_once __DIR__ . '/../includes/session.php';
         <button onclick="loadContacts('assigned')">Assigned to Me</button>
     </div>
 
-    <table border="1" cellpadding="8">
+    <table>
         <thead>
             <tr>
                 <th>Name</th>

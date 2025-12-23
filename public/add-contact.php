@@ -10,50 +10,75 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Contact | Dolphin CRM</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
+    <header>
+        <h1>Dolphin CRM</h1>
+        <p>Welcome, <?php echo htmlspecialchars($_SESSION['firstname']); ?></p>
+        <a href="dashboard.php">Dashboard</a> | <a href="logout.php">Logout</a>
+    </header>
 
-<h1>Add New Contact</h1>
+<main>
+    <h1>Add New Contact</h1>
 
-<form id="addContactForm">
-    <label>Title</label><br>
-    <input type="text" name="title" required><br><br>
+    <form id="addContactForm">
+        <div>
+            <label for="title">Title</label>
+            <input type="text" id="title" name="title" required>
+        </div>
 
-    <label>First Name</label><br>
-    <input type="text" name="firstname" required><br><br>
+        <div>
+            <label for="firstname">First Name</label>
+            <input type="text" id="firstname" name="firstname" required>
+        </div>
 
-    <label>Last Name</label><br>
-    <input type="text" name="lastname" required><br><br>
+        <div>
+            <label for="lastname">Last Name</label>
+            <input type="text" id="lastname" name="lastname" required>
+        </div>
 
-    <label>Email</label><br>
-    <input type="email" name="email" required><br><br>
+        <div>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+        </div>
 
-    <label>Telephone</label><br>
-    <input type="text" name="telephone"><br><br>
+        <div>
+            <label for="telephone">Telephone</label>
+            <input type="tel" id="telephone" name="telephone">
+        </div>
 
-    <label>Company</label><br>
-    <input type="text" name="company"><br><br>
+        <div>
+            <label for="company">Company</label>
+            <input type="text" id="company" name="company">
+        </div>
 
-    <label>Type</label><br>
-    <select name="type" required>
-        <option value="Sales Lead">Sales Lead</option>
-        <option value="Support">Support</option>
-    </select><br><br>
+        <div>
+            <label for="type">Type</label>
+            <select id="type" name="type" required>
+                <option value="Sales Lead">Sales Lead</option>
+                <option value="Support">Support</option>
+            </select>
+        </div>
 
-    <label>Assigned To</label><br>
-    <select name="assigned_to" required>
-        <?php foreach ($users as $user): ?>
-            <option value="<?= $user['id']; ?>">
-                <?= htmlspecialchars($user['firstname'] . ' ' . $user['lastname']); ?>
-            </option>
-        <?php endforeach; ?>
-    </select><br><br>
+        <div>
+            <label for="assigned_to">Assigned To</label>
+            <select id="assigned_to" name="assigned_to" required>
+                <?php foreach ($users as $user): ?>
+                    <option value="<?= $user['id']; ?>">
+                        <?= htmlspecialchars($user['firstname'] . ' ' . $user['lastname']); ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
+        </div>
 
-    <button type="submit">Save</button>
-</form>
+        <button type="submit">Save</button>
+    </form>
 
-<p id="message"></p>
+    <p id="message"></p>
+</main>
 
 <script src="../assets/js/add-contact.js"></script>
 

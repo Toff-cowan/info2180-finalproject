@@ -23,7 +23,9 @@ function loadContacts(filter) {
                     <td>${contact.company ?? ''}</td>
                     <td>${contact.type}</td>
                     <td>${contact.assigned_firstname} ${contact.assigned_lastname}</td>
-                    <td><a href="#">View</a></td>
+                    <td><a href="contact.php?id=${contact.id}">View</a></td>
+
+
                 `;
 
                 table.appendChild(row);
